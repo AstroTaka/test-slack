@@ -1,0 +1,19 @@
+# .github/workflows/project-to-slack.yml
+name: Notify Project Card Updates
+on:
+  project_card:
+    types: [created, moved, deleted]
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send message to Slack
+        uses: slackapi/slack-github-action@v1.25.0
+        with:
+          payload: |
+            {
+              "text": "📋 Project updated: ${{ github.event.project_card.note }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          
