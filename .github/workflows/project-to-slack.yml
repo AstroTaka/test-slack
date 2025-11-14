@@ -2,7 +2,7 @@
 name: Notify Project Card Updates
 on:
   issue_comment:
-   types: created
+   types: [opened, edited, reopened, closed]
   
 jobs:
   notify:
