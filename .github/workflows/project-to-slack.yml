@@ -1,8 +1,9 @@
 # .github/workflows/project-to-slack.yml
 name: Notify Project Card Updates
 on:
-  project_card:
-    types: [created, moved, deleted, converted]
+  issue_comment:
+   types: created
+  
 jobs:
   notify:
     runs-on: ubuntu-latest
