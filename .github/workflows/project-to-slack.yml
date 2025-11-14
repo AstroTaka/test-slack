@@ -2,7 +2,7 @@
 name: Notify Project Card Updates
 on:
   project_card:
-    types: [created, moved, deleted]
+    types: [created, moved, deleted, converted]
 jobs:
   notify:
     runs-on: ubuntu-latest
